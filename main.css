@@ -1,0 +1,129 @@
+p{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 67.5;
+}
+body{
+background: #bdc3c7; 
+background: linear-gradient(to right, #2c3e50, #bdc3c7); 
+
+}
+.container{
+    width: 80vw;
+    margin: 3rem auto 0 auto;
+}
+header{
+    padding: .8rem .5rem;
+    display: flex;
+    justify-content:center;
+    color: white;
+    background-color: rgba(0, 0, 0, .7);
+    border-radius: 5px;
+}
+.carItem:first-child{
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+.productCar{
+    width: 250px;
+    height: 300px;
+    max-height: 400px;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    background-color: gray;
+    border-radius: 5px;
+    z-index: 100;
+    overflow: scroll;
+    display: none;
+}
+.footerCarContainer{
+    width: 250px;
+    height: 80px;
+    background-color: gray;
+    position: absolute;
+    right: 0;
+    top: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    display: none;
+}
+.display{
+    display: flex;
+    flex-direction: column;
+}
+.carContainer{
+    height: 95%;
+}
+.visibility{
+    visibility:visible;
+}
+.addProductNew{
+    font-size:3rem;
+    width:80px;
+    height: 80px;
+    position: fixed;
+    left: 70%;
+    bottom: 10%;
+    color:white;
+    background-color:aqua;
+    z-index: 100;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+[type="text"],
+[type="number"]{
+border: none;
+border-bottom: 1px solid;
+background: linear-gradient(to right, #2c3e50, #bdc3c7); 
+}
+form:last-child{
+    margin-bottom: 1rem;
+}
+.formProduct{
+    background-color: #bdc3c7;
+    width: 70%;
+    border-radius: 10px;
+    display: none;
+}
+.contentCarrito{
+width: 90%;
+height: 200px;
+margin: 10px auto;
+
+}
+
+.subtitle,
+.title span{
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+}
+.title span{
+    display: inline-block;
+}
+img{
+object-fit: cover;
+background-position: center;
+background-size: cover;
+}
+.btn,
+.btn-delete{
+    background-color: blue;
+    text-align: center;
+    display: inline-block;
+    width: 20px;
+    border-radius: 2px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 5px;
+}
+.btn-delete{
+    background-color: red;
+    width: 30px;
+}

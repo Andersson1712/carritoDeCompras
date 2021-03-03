@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/ed-grid@3.0.0/src/css/ed-grid.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/main.css">
+    <title>GovaComerce</title>
+</head>
+<body>
+    <header>
+        <div class="ed-grid s-grid-5">
+            <div class="logo s-cols-4"><h1>GovaComerce</h1></div>
+            <div class="carContainer ed-container">
+                <div class="ed-item carItem s-main-end">
+                    <span id="car" >🛒</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="carrito">
+        <div class="productCar " id="productCar"> 
+        </div>
+        <div class="footerCarContainer s-shadow-bottom " id="footerCarContainer">
+            <p>Subtotal: <span id="subtotalFooterCarrito"></span></p>
+            <p>I.V.A.  : <span id="ivaFooterCarrito"> </span></p>
+            <p>Total: <span id="totalFooterCarrito"></span></p>
+        </div>
+    </section>
+    
+    <div class="addProductNew ed-grid" id="addProductNew">
+        <span>+</span>
+    </div>
+    <div class="ed-grid s-grid-6 formProduct" id="formProduct">
+        <form id='form'>
+            <div class="form-item">
+                   <input type="text" name="imagen" required> 
+            </div>
+            <div class="form-item">
+                    <input type="text" name="titulo" required>
+            </div>
+            <div class="form-item">
+                    <input type="number" name="precio">
+            </div>
+            <div class="form-item">
+                    <input type="number" name="stock" min="1">
+            </div>
+            <div class="button s-my-2">
+                <input type="submit" >
+            </div>
+        </form>
+    </div>
+    <main class="container" >
+        <div class="ed-grid s-grid-1 m-grid-2 l-grid-3 xl-grid-4 grid-gap" id="containerProductos">        
+        </div>
+    </main>
+
+    <template id = 'template'>
+        <div class=" s-mb-2">
+            <div class="img-container s-ratio-16-9 s-radius-tr">
+                <img >
+            </div>
+            <div class="s-bg-white">
+                 <h3></h3>
+                 <p>$ <span id='precio'> </span> USD</p>
+                 <div class="ed-grid s-grid-4 s-cross-center">
+                     <p class="s-cols-2 m-cols-3">Stock: <span id="stock"></span></p>
+                     <span class="button s-cols-2 m-cols-1 " id="agregar">Agregar</span>
+                 </div>
+            </div>
+        </div>
+    </template>
+    <template id="templateCarrito">
+        <div class="contentCarrito s-shadow-bottom s-mb-2">
+            <div class="img-container s-ratio-16-9 s-radius-tr">
+                <img class="img">
+            </div>
+            <div class="s-bg-white s-mb-2">
+                <h4> </h4>
+                <p>$ <span id='precio'> </span> USD</p>
+                <p> cantidad: <span id='cantidad'> </span> <span class="btn mas">+</span> <span class="btn menos">-</span> <span class="btn-delete">X</span></p>
+            </div>
+        </div>
+    </template>
+    <script defer type="module" src="./views/main.js"></script>
+</body>
+</html>
