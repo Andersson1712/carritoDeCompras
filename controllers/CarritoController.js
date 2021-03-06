@@ -1,5 +1,10 @@
 import carritoModel from '../models/Carrito.js'
+import Ui from '../models/Ui.js'
+import Producto from '../models/Producto.js'
 const modelCarrito = new carritoModel()
+const UI = new Ui()
+const producto = new Producto()
+
 
 export default class UiCarrito{
     carrito = []
@@ -20,17 +25,49 @@ export default class UiCarrito{
     setAumentarCantidad(id){
         if (this.carrito.indexOf(id)) {
             Object.values(this.carrito).forEach( valor => {
-                
                 if (valor.id == id) {
-                    let newCantidad = modelCarrito.setAumentarCantidad(valor.cantidad)
-                    valor.cantidad = newCantidad
-                    modelCarrito.setAgregarProductosCarrito(this.carrito)
+                    if (valor.cantidad < 5) {
+                        let newCantidad = modelCarrito.setAumentarCantidad(valor.cantidad)
+                        valor.cantidad = newCantidad
+                        modelCarrito.setAgregarProductosCarrito(this.carrito)
+                    }
                 }
               })
              
            }
     }
+    setRestarCantidad(id){
+        if (this.carrito.indexOf(id)) {
+            Object.values(this.carrito).forEach( (valor,index) => {
+                if (valor.id == id) {
 
+                    if (valor.cantidad > 1 ) {
+                        let newCantidad = modelCarrito.setRestarCantidad(valor.cantidad)
+                        valor.cantidad = newCantidad
+                        modelCarrito.setAgregarProductosCarrito(this.carrito)
+                    }else{
+
+                        this.carrito.splice(index,1)                    
+                        modelCarrito.setAgregarProductosCarrito(this.carrito)
+                        alert('producto eliminado del carrito')
+                    }
+                }   
+            })
+             
+        }
+    }
+
+    setEliminarProductoCarrito(id){  
+        if (this.carrito.indexOf(id)) {
+            Object.values(this.carrito).forEach( (valor,index) => {
+                if (valor.id == id) 
+                  this.carrito.splice(index,1)                    
+                  modelCarrito.setAgregarProductosCarrito(this.carrito)
+                  alert('producto eliminado del carrito')   
+            })
+             
+        }
+    }
 
     getPintarCarrito(){
         if(modelCarrito.validarLocalStorage()){

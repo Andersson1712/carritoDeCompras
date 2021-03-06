@@ -23,30 +23,42 @@
         <div class="productCar " id="productCar"> 
         </div>
         <div class="footerCarContainer s-shadow-bottom " id="footerCarContainer">
-            <p>Subtotal: <span id="subtotalFooterCarrito"></span></p>
-            <p>I.V.A.  : <span id="ivaFooterCarrito"> </span></p>
-            <p>Total: <span id="totalFooterCarrito"></span></p>
+           <div>
+               <p>Subtotal: </p>
+               <span id="subtotalFooterCarrito"></span>
+           </div>
+           <div>
+               <p>I.V.A.: </p>
+               <span id="ivaFooterCarrito"> </span>
+           </div>
+           <div>
+               <p>Total:</p>
+               <span id="totalFooterCarrito"></span>
+           </div>
         </div>
     </section>
     
-    <div class="addProductNew ed-grid" id="addProductNew">
+    <div class="addProductNew" id="addProductNew">
         <span>+</span>
     </div>
-    <div class="ed-grid s-grid-6 formProduct" id="formProduct">
-        <form id='form'>
-            <div class="form-item">
+    <section id="messageContainer">
+        
+    </section>
+    <div class="formProduct" id="formProduct">
+        <form id='form' class=" formContainer">
+            <div class="">
                    <input type="text" name="imagen" required> 
             </div>
-            <div class="form-item">
+            <div >
                     <input type="text" name="titulo" required>
             </div>
-            <div class="form-item">
-                    <input type="number" name="precio">
+            <div >
+                    <input type="number" name="precio" required>
             </div>
-            <div class="form-item">
-                    <input type="number" name="stock" min="1">
+            <div >
+                    <input type="number" name="stock" min="1" required>
             </div>
-            <div class="button s-my-2">
+            <div class="s-my-2">
                 <input type="submit" >
             </div>
         </form>
@@ -61,12 +73,12 @@
             <div class="img-container s-ratio-16-9 s-radius-tr">
                 <img >
             </div>
-            <div class="s-bg-white">
+            <div class="s-bg-white ">
                  <h3></h3>
-                 <p>$ <span id='precio'> </span> USD</p>
+                 <p> <span id='precio'> </span> USD</p>
                  <div class="ed-grid s-grid-4 s-cross-center">
-                     <p class="s-cols-2 m-cols-3">Stock: <span id="stock"></span></p>
-                     <span class="button s-cols-2 m-cols-1 " id="agregar">Agregar</span>
+                     <p class="s-cols-2 ">Stock: <span id="stock"></span></p>
+                     <button class="button s-cols-2 s-mb-1 s-mr-1" id="agregar" >Agregar</button>
                  </div>
             </div>
         </div>

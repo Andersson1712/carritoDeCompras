@@ -6,11 +6,10 @@ export default class Producto {
 
     setRestarStock(stock){ return stock -=  1 }
 
+    setAumentarStock(stock){ return stock +=  1 }
+    setRestaurarStock(stock, unidad){ return stock += unidad}
 
-
-
-
-
+    validarStock(stock){ return stock > 0 ? 1 : -1 } 
 
     getObtenerLocalStorage(){ 
         return JSON.parse(localStorage.getItem('articulos'))

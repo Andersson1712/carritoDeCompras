@@ -3,11 +3,10 @@ export default class Carrito{
     setAgregarProductosCarrito(producto){
         localStorage.setItem('productos',JSON.stringify(producto));
     }
-    setVaciarCarrito(){
-        this.products = []
-    }
    
-    setAumentarCantidad(cantidad){ return cantidad +=  1 }
+    setAumentarCantidad(cantidad ){ return cantidad +=  1 }
+
+    setRestarCantidad(cantidad){ return cantidad -=  1 }
 
     getObtenerProductosCarrito(){
         return JSON.parse(localStorage.getItem('productos'))
@@ -18,7 +17,7 @@ export default class Carrito{
         let subtotal = 0
         let productos = this.getObtenerProductosCarrito()
         productos.forEach(titulo => {
-        subtotal += parseInt(titulo.precio)       
+        subtotal += parseInt(titulo.precio * titulo.cantidad)       
         })
         return subtotal
     }
